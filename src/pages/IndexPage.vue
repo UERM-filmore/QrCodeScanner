@@ -34,9 +34,10 @@
           </q-form>
         </q-card-section>
         <q-card-section>
-          <qrcode-stream></qrcode-stream>
-          <!-- <qrcode-drop-zone></qrcode-drop-zone>
-          <qrcode-capture></qrcode-capture> -->
+          <qrcode-stream
+            class="custom-qrcode-stream"
+            @decode="onDetect"
+          ></qrcode-stream>
         </q-card-section>
       </q-card>
     </div>
@@ -64,3 +65,10 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.custom-qrcode-stream {
+  width: 300px; /* Set the desired width */
+  height: 300px; /* Set the desired height */
+}
+</style>
