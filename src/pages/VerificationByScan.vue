@@ -1,27 +1,17 @@
 <template>
   <q-page class="flex flex-center">
     <div class="row q-col-gutter-md">
-      <q-card class="my-card q-mt-xl .shadow-24">
+      <q-card class="my-card q-mt-xs .shadow-24">
         <q-card-section>
           <q-form @submit="onSubmit" class="q-gutter-md q-pa-md">
-            <q-input color="teal" outlined label="Last Name">
-              <template v-slot:prepend>
-                <q-icon name="person" />
-              </template>
-            </q-input>
-
-            <q-input color="teal" outlined label="First Name">
-              <template v-slot:prepend>
-                <q-icon name="person" />
-              </template>
-            </q-input>
-
-            <q-input color="teal" outlined label="Birthdate">
-              <template v-slot:prepend>
-                <q-icon name="event" />
-              </template>
-            </q-input>
-
+            <div class="text-weight-bold">
+              To check our records and validate the legitimacy of graduate
+              students, use the form below.
+            </div>
+            <qrcode-stream
+              class="custom-qrcode-stream"
+              @decode="onDetect"
+            ></qrcode-stream>
             <div>
               <q-btn
                 icon="verified"
@@ -33,12 +23,12 @@
             </div>
           </q-form>
         </q-card-section>
-        <q-card-section>
+        <!-- <q-card-section>
           <qrcode-stream
             class="custom-qrcode-stream"
             @decode="onDetect"
           ></qrcode-stream>
-        </q-card-section>
+        </q-card-section> -->
       </q-card>
     </div>
   </q-page>

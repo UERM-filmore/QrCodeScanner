@@ -121,13 +121,13 @@
       </q-toolbar>
 
       <q-tabs align="left">
-        <q-route-tab to="/page1" label="VERIFICATION OF RATING" />
-        <q-route-tab to="/page2" label="VERIFICATION OF LICENSE(BY NAME)" />
-        <q-route-tab
+        <!-- <q-route-tab to="/page1" label="VERIFICATION OF RATING" /> -->
+        <q-route-tab to="/" label="VERIFICATION BY NAME" />
+        <!-- <q-route-tab
           to="/page3"
           label="VERIFICATION OF LICENSE(BY LICENSE NO.)"
-        />
-        <q-route-tab to="/page3" label="VERIFICATION OF LICENSE(BY SCANNING)" />
+        /> -->
+        <q-route-tab to="/verify-scan" label="VERIFICATION BY SCANNING" />
       </q-tabs>
     </q-header>
 
