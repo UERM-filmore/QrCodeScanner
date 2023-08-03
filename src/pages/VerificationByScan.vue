@@ -4,15 +4,16 @@
       <q-card class="my-card q-mt-xs .shadow-24">
         <q-card-section>
           <q-form @submit="onSubmit" class="q-gutter-md q-pa-md">
-            <div class="text-weight-bold">
+            <div class="text-weight-bold q-mb-lg">
               To check our records and validate the legitimacy of graduate
               students, use the form below.
             </div>
+            <p v-if="scannedQRCode">Scanned QR Code: {{ scannedQRCode }}</p>
             <qrcode-stream
               class="custom-qrcode-stream"
-              @decode="onDetect"
+              @decode="onQRCodeScan"
             ></qrcode-stream>
-            <div>
+            <!-- <div>
               <q-btn
                 icon="verified"
                 label="VERIFY"
@@ -20,7 +21,7 @@
                 color="primary"
                 class="full-width q-mt-md"
               />
-            </div>
+            </div> -->
           </q-form>
         </q-card-section>
         <!-- <q-card-section>
@@ -43,13 +44,15 @@ export default defineComponent({
     QrcodeStream,
   },
   data() {
-    return {};
+    return {
+      scannedQRCode: null,
+    };
   }, //END OF DATA LIFE CYCLE HOOKS
   methods: {
     onSubmit() {
       console.log("HELLO");
     },
-    onDetect(detectedCodes) {
+    onQRCodeScan(detectedCodes) {
       console.log("HELLO", detectedCodes);
     },
   },

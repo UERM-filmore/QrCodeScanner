@@ -43,7 +43,7 @@
               outlined
               v-model="post.date"
               :rules="[
-                (val) => (val && val.length > 0) || 'BIRTHDAY IS REQUIRED!',
+                (val) => (val && val.length > 0) || 'BIRTHDATE IS REQUIRED!',
               ]"
             >
               <template v-slot:append>
